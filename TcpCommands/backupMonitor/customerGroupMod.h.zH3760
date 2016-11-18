@@ -1,0 +1,57 @@
+/**
+  * Modifiziert eine Kundengruppe
+  */
+
+#ifndef TCPCOMMAND__BACKUPMONITOR_CUSTOMERGROUPMOD_H
+#define TCPCOMMAND__BACKUPMONITOR_CUSTOMERGROUPMOD_H
+
+#include <TcpAbstractCommand.h>
+
+class TcpCommand_backupMonitor_customerGroupMod : public TcpAbstractCommand
+{
+    Q_OBJECT
+public:
+    enum ACTION {
+        CREATE,
+        MODIFY
+    };
+
+private:
+    
+    ACTION _action;
+    quint32 _groupId;
+    QHash<QString, QVariant> _cols;
+
+    bool _isSuccessful;
+    QString _errorMessage;
+    
+public:
+    explicit TcpCommand_backupMonitor_customerGroupMod(QObject *parent = 0);
+    
+    void execWriteData();
+    void execReadData();
+
+    inline void setAction(ACTION action) {
+        _action = action;
+    }
+    inline void setGroupId(quint32 id) {
+        _groupId = id;
+    }
+    inline void setCols(const QHash<QString, QVariant> &cols) {
+        _cols = cols;
+    }
+
+    inline bool isSuccessful() {
+        return _isSuccessful;
+    }
+
+    inline QString errorMessage() {
+        return _errorMessage;
+    }
+    
+public slots:
+    
+};
+
+#endif // TCPCOMMAND__BACKUPMONITOR_CUSTOMERGROUPMOD_H
+
