@@ -2,8 +2,13 @@
 Ubuntu Pakete sollten auch mit Debian kompatibel sein.
 
 Download: https://github.com/dbgtmaster/sepbackupmonitor-client/tree/master/Download-Packages
+
 Zum Download auf das jeweilige Paket klicken und auf den "Download" Button.
 
+
+Windows
+===
+Im "Download-Packages" Ordner die *.exe Datei herunterladen. 32Bit sowie auch 64Bit werden unterstützt.
 
 Ubuntu
 ===
