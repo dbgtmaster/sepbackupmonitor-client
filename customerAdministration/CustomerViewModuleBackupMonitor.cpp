@@ -165,7 +165,7 @@ void CustomerViewModuleBackupMonitor::reloadClientInstallCommand() {
         additionalWgetParameters += "--proxy-password \""+ ui->inputProxyPassword->text() +"\"";
     }
 
-    ui->inputClientInstallationCommand->setText("rm -f  install_siedl_backupsyncer.sh; "+ additionalCommands +" wget "+ additionalWgetParameters +" "+ _customerInterfaceAddress + "; sh install_siedl_backupsyncer.sh");
+    ui->inputClientInstallationCommand->setText("rm -f  install_siedl_backupsyncer.sh; "+ additionalCommands +" wget "+ additionalWgetParameters +" "+ _customerInterfaceAddress + "/download_sepbackupmonitor_syncer_installer.php -O install_sepbackupmonitor_syncer.sh; bash install_sepbackupmonitor_syncer.sh");
 }
 
 void CustomerViewModuleBackupMonitor::clearProxyInputs() {
